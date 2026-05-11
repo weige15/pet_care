@@ -1,3 +1,5 @@
+import BookingDateTimeInput from "./BookingDateTimeInput";
+
 const services = [
   {
     icon: "🛁",
@@ -320,8 +322,8 @@ export default function Home() {
                   </select>
                 </FormLabel>
               </div>
-              <FormLabel label="想預約的日期">
-                <input className={inputClass} type="date" name="date" />
+              <FormLabel label="期望到店日期">
+                <BookingDateTimeInput className={inputClass} />
               </FormLabel>
               <FormLabel label="備註">
                 <textarea className={`${inputClass} min-h-24 resize-y`} name="note" placeholder="例如：容易緊張、皮膚敏感、毛結位置、偏好的造型" />
