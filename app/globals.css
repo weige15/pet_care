@@ -26,3 +26,31 @@ body {
     opacity: 1;
   }
 }
+
+.review-carousel {
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.review-track {
+  animation: reviewSlide 34s linear infinite;
+}
+
+.review-carousel:hover .review-track {
+  animation-play-state: paused;
+}
+
+@keyframes reviewSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-track {
+    animation: none;
+  }
+}

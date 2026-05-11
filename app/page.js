@@ -61,16 +61,49 @@ const reviews = [
     body: "第一次遇到會主動回報皮膚狀況的店，洗完毛很蓬鬆，也沒有一直抓癢。",
     initial: "米",
     name: "米露的媽媽",
+    pet: "瑪爾濟斯｜敏感肌",
   },
   {
     body: "我家狗很怕吹風，美容師很有耐心，還分段讓牠休息，回家精神很好。",
     initial: "豆",
     name: "豆豆的爸爸",
+    pet: "柴犬｜怕吹風",
   },
   {
     body: "價格透明，預約時間準，造型也會先溝通，修完真的乾淨又可愛。",
     initial: "花",
     name: "花生的姊姊",
+    pet: "貴賓｜造型修剪",
+  },
+  {
+    body: "貓咪本來很緊張，店員先讓牠熟悉環境，沒有硬抓硬洗，這點讓我很放心。",
+    initial: "橘",
+    name: "橘子的主人",
+    pet: "米克斯貓｜初次洗護",
+  },
+  {
+    body: "換毛期來做深層護毛，回家少掉很多飛毛，梳起來也不再一直卡住。",
+    initial: "球",
+    name: "球球的媽媽",
+    pet: "柯基｜換毛護理",
+  },
+  {
+    body: "美容後會傳照片和提醒，連耳朵有點紅都幫忙標註，照顧得很細。",
+    initial: "奶",
+    name: "奶茶的哥哥",
+    pet: "博美｜例行保養",
+  },
+  {
+    body: "之前在別家修得太短，這次有先確認長度和臉型，成品自然很多。",
+    initial: "露",
+    name: "露露的姊姊",
+    pet: "比熊｜精緻修剪",
+  },
+  {
+    body: "環境乾淨沒有刺鼻香味，接毛孩時精神很好，毛也柔順到一直想摸。",
+    initial: "黑",
+    name: "黑糖的爸爸",
+    pet: "臘腸｜基礎清潔",
   },
 ];
 
@@ -215,17 +248,31 @@ export default function Home() {
 
         <section id="reviews" className="bg-paper px-[clamp(18px,4vw,64px)] py-[clamp(58px,8vw,96px)]">
           <SectionHead title="飼主放心，毛孩願意再來。" description="我們重視漂亮的成果，也重視牠每一次進門時的心情。" />
-          <div className="mx-auto grid max-w-[1160px] grid-cols-3 gap-[18px] max-[860px]:grid-cols-1">
-            {reviews.map((review) => (
-              <article className="grid gap-4 rounded-lg border border-line bg-white p-6 shadow-card" key={review.name}>
-                <div className="text-lg text-gold" aria-label="五星評價">★★★★★</div>
-                <p className="text-muted">{review.body}</p>
-                <div className="flex items-center gap-3 font-extrabold">
-                  <span className="grid h-[42px] w-[42px] place-items-center rounded-full bg-deep text-white">{review.initial}</span>
-                  {review.name}
-                </div>
-              </article>
-            ))}
+          <div className="review-carousel mx-auto max-w-[1160px] overflow-hidden" aria-label="客戶評價輪播">
+            <div className="review-track flex w-max gap-[18px] py-2">
+              {[...reviews, ...reviews].map((review, index) => (
+                <article
+                  className="grid min-h-[260px] w-[min(360px,82vw)] shrink-0 content-between gap-5 rounded-lg border border-line bg-white p-6 shadow-card"
+                  key={`${review.name}-${index}`}
+                  aria-hidden={index >= reviews.length ? "true" : undefined}
+                >
+                  <div>
+                    <div className="mb-3 flex items-center justify-between gap-3">
+                      <div className="text-lg tracking-[2px] text-gold" aria-label="五星評價">★★★★★</div>
+                      <span className="rounded-full bg-mist px-3 py-1 text-xs font-bold text-deep">{review.pet}</span>
+                    </div>
+                    <p className="text-[17px] leading-relaxed text-[#46585e]">「{review.body}」</p>
+                  </div>
+                  <div className="flex items-center gap-3 font-extrabold">
+                    <span className="grid h-[46px] w-[46px] place-items-center rounded-full bg-deep text-white">{review.initial}</span>
+                    <div>
+                      <div>{review.name}</div>
+                      <div className="text-sm font-semibold text-muted">固定回訪飼主</div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
