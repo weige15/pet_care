@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply m-0 bg-paper font-sans text-ink antialiased;
+  line-height: 1.6;
+}
+
+@keyframes heroFade {
+  0%,
+  30% {
+    opacity: 1;
+  }
+
+  38%,
+  92% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
