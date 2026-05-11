@@ -230,18 +230,20 @@ export default function Home() {
         </section>
 
         <section id="booking" className="bg-deep px-[clamp(18px,4vw,64px)] py-[clamp(58px,8vw,96px)] text-white">
-          <div className="mx-auto grid max-w-[1160px] grid-cols-[0.95fr_1.05fr] items-center gap-[clamp(26px,5vw,60px)] max-[860px]:grid-cols-1">
-            <div>
-              <div className="mb-[18px] inline-flex items-center gap-2 text-sm font-extrabold text-mint">預約與聯絡</div>
-              <h2 className="mb-3.5 text-[clamp(32px,5vw,56px)] font-bold leading-[1.08]">把洗澡日變成毛孩舒服的一天。</h2>
-              <p className="text-white/75">填寫預約需求後，我們會在營業時間內聯繫你確認時段與毛孩狀況。</p>
-              <div className="mt-6 grid gap-3" aria-label="店鋪資訊">
+          <div className="mx-auto grid max-w-[1160px] gap-[clamp(26px,5vw,54px)]">
+            <div className="grid gap-6">
+              <div className="max-w-[760px]">
+                <div className="mb-[18px] inline-flex items-center gap-2 text-sm font-extrabold text-mint">預約與聯絡</div>
+                <h2 className="mb-3.5 text-[clamp(32px,5vw,56px)] font-bold leading-[1.08]">把洗澡日變成毛孩舒服的一天。</h2>
+                <p className="text-white/75">填寫預約需求後，我們會在營業時間內聯繫你確認時段與毛孩狀況。</p>
+              </div>
+              <div className="grid gap-3 rounded-lg border border-white/15 bg-white/8 p-[clamp(18px,3vw,26px)]" aria-label="店鋪資訊">
                 {contactItems.map((item) => (
                   <div className="flex items-center gap-3 text-white/90" key={item}>{item}</div>
                 ))}
               </div>
-              <div className="mt-6 overflow-hidden rounded-lg border border-mint/50 bg-[#f5fffb] text-ink shadow-[0_18px_42px_rgba(12,47,54,0.2)]" role="img" aria-label="毛毛沐場寵物沙龍位於桃園市新屋區頭洲里新榮路 58 號的可愛風格地圖">
-                <img className="block h-auto w-full" src="/assets/store-map-ai.png" alt="毛毛沐場寵物沙龍位於桃園市新屋區頭洲里新榮路 58 號的清新可愛風格地圖" />
+              <div className="overflow-hidden rounded-lg border border-mint/50 bg-[#f5fffb] text-ink shadow-[0_18px_42px_rgba(12,47,54,0.2)]" role="img" aria-label="毛毛沐場寵物沙龍位於桃園市新屋區頭洲里新榮路 58 號的可愛風格地圖">
+                <img className="block aspect-[4/3] h-auto w-full object-contain" src="/assets/store-map-ai.png" alt="毛毛沐場寵物沙龍位於桃園市新屋區頭洲里新榮路 58 號的清新可愛風格地圖" />
               </div>
             </div>
             <form className="grid gap-3.5 rounded-lg bg-white p-[clamp(20px,4vw,34px)] text-ink shadow-soft">
